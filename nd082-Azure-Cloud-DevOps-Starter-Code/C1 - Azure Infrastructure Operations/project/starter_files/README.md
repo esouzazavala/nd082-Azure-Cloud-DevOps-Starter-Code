@@ -19,16 +19,28 @@ For this project, you will write a Packer template and a Terraform template to d
 ### Instructions
 
 2.1. ✔️ Navigate to your repository
+
 2.2. ✔️ Authenticate to Azure the open Azure portal Bash Cloud Shell to upload project1-tagging-policy.json
+
 2.3. ✔️ Deploy a policy
+
 Create the Policy Definition:
 
 az policy definition create --name 'tagging-policy' --display-name 'deny-creation-untagged-resources' --description 'This policy ensures all indexed resources in your subscription have tags and deny deployment if they do not' --rules ./project1-tagging-policy.json  --mode All
+
+
 2.4. ✔️ Create the Policy Assignment
+
 az policy assignment create --name 'tagging-policy' --display-name 'deny-creation-untagged-resources' --policy tagging-policy
+
+
 2.5. ✔️ List the policy assignments to verify
 az policy assignment list
-alt text
+
+<img width="1554" height="685" alt="image" src="https://github.com/user-attachments/assets/7b364310-88a5-4bd8-baef-9d6a1f4289a5" />
+
+
+
 
 2.6. ✔️ Create a Server Image with Packer
 ✔️ Open Azure portal Bash Cloud Shell then upload server.json
@@ -36,14 +48,17 @@ alt text
 ✔️ Create a Server Image using below packer command
 
 packer build server.json
-alt text
+
+<img width="1533" height="668" alt="image" src="https://github.com/user-attachments/assets/356adfd1-05a5-4355-9ac7-113efcb8c6d2" />
 
 ✔️ View Images
 
 az image list
-alt text
+<img width="1542" height="596" alt="image" src="https://github.com/user-attachments/assets/c803756d-19c0-4f8f-8755-450107f2506d" />
+
 
 2.7. ✔️ Create the infrastructure with Terraform Template
+
 Go to folder cd project1-IaC/
 
 Our Terraform template will allow us to reliably create, update, and destroy our infrastructure
@@ -53,6 +68,7 @@ Customize vars.tf
 Variables from vars.tf are called from mains.tf, for example the variable prefix is called as:
 
 ${var.prefix}
+
 In vars.tf, the description and value is assigned in the following manner:
 
 variable "prefix" {
@@ -61,25 +77,35 @@ variable "prefix" {
 }
 See all variable in vars.tf
 
+
 2.8. ✔️ Deploy infrastructure
+
 Initializing Working Directories
+
 terraform init
+
 Create infrastructure plan
+
 terraform plan -out solution.plan
-alt text
+
 
 Deploy the infrastructure plan
+
 terraform apply "solution.plan"
-alt text
+
+
 
 View infrastructure
-terraform show
-alt text
 
-Azure Portal Azuredevops resource created by terraform ✔️ View in Azure Portal alt text
+terraform show
+
+<img width="1547" height="711" alt="image" src="https://github.com/user-attachments/assets/e6be1298-5e7f-4b71-9a82-2e936c9a317c" />
+
+
 
 Destroy infrastructure (when completed) using clean_resources.sh to delete all resources except Azuredevops resource group
 terraform state list | while read line
+
 do 
 if [[ $line == azurerm_resource_group* ]]; then
 echo $line " is a resource group and will not be deleted!"
@@ -88,9 +114,12 @@ echo "deleting: " $line
 terraform destroy -target $line -auto-approve
 fi
 done
+
 Using terraform state list command to skip destroying azurerm_resource_group which lab user can not delete it.
 
-alt text
 
-Delete images(when completed)
+
+
+
+Delete images
 az image delete -g Azuredevops -n MyPackerImage
