@@ -102,6 +102,10 @@ terraform show
 <img width="1547" height="711" alt="image" src="https://github.com/user-attachments/assets/e6be1298-5e7f-4b71-9a82-2e936c9a317c" />
 
 
+<img width="1167" height="738" alt="image" src="https://github.com/user-attachments/assets/9b6faddd-5908-46fb-9535-c220eddcdeb2" />
+
+
+
 
 Destroy infrastructure (when completed) using clean_resources.sh to delete all resources except Azuredevops resource group
 terraform state list | while read line
