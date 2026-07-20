@@ -104,7 +104,7 @@ terraform show
 
 <img width="1167" height="738" alt="image" src="https://github.com/user-attachments/assets/9b6faddd-5908-46fb-9535-c220eddcdeb2" />
 
-
+Terraform template  
 
 
 Destroy infrastructure (when completed) using clean_resources.sh to delete all resources except Azuredevops resource group
