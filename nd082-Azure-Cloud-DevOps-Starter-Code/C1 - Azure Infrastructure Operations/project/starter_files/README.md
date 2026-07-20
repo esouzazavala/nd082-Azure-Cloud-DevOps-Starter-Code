@@ -128,6 +128,18 @@ terraform apply solution.plan
 
 terraform show 
 
+<img width="1010" height="541" alt="image" src="https://github.com/user-attachments/assets/aad0aa2e-b4e8-448a-9554-648a5b79e420" />
+
+
+<img width="1782" height="179" alt="image" src="https://github.com/user-attachments/assets/3a7638d9-0bc7-4437-af2a-53adcf2aa5bf" />
+
+<img width="1852" height="240" alt="image" src="https://github.com/user-attachments/assets/c3b3a7b0-411b-4493-8f44-9ee18c82d85f" />
+
+<img width="1220" height="204" alt="image" src="https://github.com/user-attachments/assets/f6fb077c-8f77-4cec-8eed-149730cf7031" />
+
+<img width="1855" height="545" alt="image" src="https://github.com/user-attachments/assets/aa26a3b3-54d0-4419-b0e6-55246016d876" />
+
+
 destoy 
 
 terraform destory 
