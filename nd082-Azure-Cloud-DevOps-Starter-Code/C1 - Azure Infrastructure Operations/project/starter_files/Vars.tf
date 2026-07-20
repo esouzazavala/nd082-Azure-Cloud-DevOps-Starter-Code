@@ -62,3 +62,4 @@ variable "tags" {
   default = {
     project = "udacity-webserver"
   }
+}
