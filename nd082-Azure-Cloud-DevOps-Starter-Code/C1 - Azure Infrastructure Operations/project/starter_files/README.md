@@ -106,6 +106,34 @@ terraform show
 
 Terraform template  
 
+Check-out the vars.tf file!
+
+There you may need to fill-out with the right values:
+
+initailize terraform 
+
+terraform init
+
+review the solution to deploy
+
+terraform pan 
+
+solution.plan 
+
+terraform plan -out solution.plan 
+
+build a dn deplot the solution 
+
+terraform apply solution.plan
+
+terraform show 
+
+destoy 
+
+terraform destory 
+
+ 
+
 
 Destroy infrastructure (when completed) using clean_resources.sh to delete all resources except Azuredevops resource group
 terraform state list | while read line
